@@ -1,0 +1,37 @@
+## ----------------------------------------------------------------------------
+## ..:: NGINX Plus installation ::..
+## ----------------------------------------------------------------------------
+
+## Installing NGINX Plus
+- hosts: nginx-controller
+  remote_user: root
+  tasks:
+
+    - name: Upgrading all packages to the latest version
+      apt:
+        update_cache: yes
+        upgrade: dist
+        
+    - name: Remove resolv.conf link
+      file:
+        path: /etc/resolv.conf
+        state: absent
+
+    - name: Copy resolv.conf file
+      copy:
+        src: resolv.conf
+        dest: /etc/resolv.conf
+
+    - name: setting hostname
+      template:
+        src: hostname.j2
+        dest: /etc/hostname
+
+    - name: Enable rc.local
+      template:
+        src: rc.local.j2
+        dest: /etc/rc.local
+        mode: '0755'
+
+    - name: Executing /etc/rc.local
+      command: /etc/rc.local
