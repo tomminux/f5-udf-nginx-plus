@@ -3,7 +3,7 @@
 ## ----------------------------------------------------------------------------
 
 ## Installing NGINX Plus
-- hosts: nginx-controller
+- hosts: nginx_plus_nodes
   remote_user: root
   tasks:
 

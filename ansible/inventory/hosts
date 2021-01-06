@@ -5,8 +5,8 @@ infra-server ansible_host=10.1.1.4 secondNetIf_name=ens4 secondNetIf_ip=10.1.20.
 ansible_python_interpreter=/usr/bin/python3
 
 [nginx_plus_nodes]
-nginx-plus-1 ansible_host=10.1.1.10 secondNetIf_name=eth1 secondNetIf_ip=10.1.20.10 hostname=nginx-plus-1
-nginx-plus-2 ansible_host=10.1.1.11 secondNetIf_name=eth1 secondNetIf_ip=10.1.20.11 hostname=nginx-plus-1
+nginx-plus-1 ansible_host=10.1.1.10 secondNetIf_name=eth1 secondNetIf_ip=10.1.10.10 thirdNetIf_name=eth2 thirdNetIf_ip=10.1.20.10 hostname=nginx-plus-1
+nginx-plus-2 ansible_host=10.1.1.11 secondNetIf_name=eth1 secondNetIf_ip=10.1.10.11 thirdNetIf_name=eth2 thirdNetIf_ip=10.1.20.11 hostname=nginx-plus-1
 
 [nginx_plus_nodes:vars]
 ansible_python_interpreter=/usr/bin/python3

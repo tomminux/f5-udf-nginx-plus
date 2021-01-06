@@ -1,5 +1,6 @@
 #!/bin/bash
 
 ifconfig {{ secondNetIf_name }} {{ secondNetIf_ip }}/24 up
+ifconfig {{ thirdNetIf_name }} {{ thirdNetIf_ip }}/24 up
 
 exit 0
